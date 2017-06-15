@@ -25,22 +25,39 @@ let contentTypes = {
  */
 router.get('/', function(req, res, next) {
 
-  let leafNodes = getTopicTreeLeafNodes(topicTreeJson);
+  let leafNodes = getTopicTreeLeafNodes(topicTreeJson, []);
   let contentNodes = leafNodes.filter(x => Object.values(contentTypes).includes(x.kind)).map(parseContent);
 
   res.send(contentNodes);
-
 });
 
 /**
  * 
  * @param {*} tree 
  */
-function getTopicTreeLeafNodes(tree) {
-  if( !tree.hasOwnProperty("children") ) {
-    return [tree];
+function getTopicTreeLeafNodes(node, parents) {
+  if( !node.hasOwnProperty("children") ) {
+    node.parents = parents;
+    return [node];
   }
-  return tree.children.reduce( (acc, val) => acc.concat( getTopicTreeLeafNodes(val) ), [] );
+  return node.children.reduce( (acc, val) => acc.concat( getTopicTreeLeafNodes(val, parents.concat(parseTopic(node))) ), [] );
+}
+
+/**
+ * 
+ * @param {*} node 
+ */
+function parseTopic(node) {
+  return {
+    id: node.id,
+    translated_title: node.translated_title,
+    translated_standalone_title: node.translated_standalone_title,
+    description: node.descripotion,
+    translated_description: node.translated_description,
+    slug: node.slug,
+    relative_url: node.relative_url,
+    ka_url: node.ka_url
+  };
 }
 
 /**
@@ -70,7 +87,8 @@ function parseVideo(videoNode) {
     originId: videoNode.id,
     title: videoNode.title,
     url: videoNode.ka_url,
-    description: videoNode.description
+    description: videoNode.description,
+    parents: videoNode.parents
   };
 }
 
