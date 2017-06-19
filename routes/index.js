@@ -83,12 +83,15 @@ function parseContent(node) {
  * @param {*} videoNode 
  */
 function parseVideo(videoNode) {
+
+  let tags = videoNode.parents.map(x => x.translated_title).reduce( (x,y) => x.concat(y), [] );
+
   return {
     originId: videoNode.id,
     title: videoNode.title,
     url: videoNode.ka_url,
     description: videoNode.description,
-    parents: videoNode.parents
+    tags: tags
   };
 }
 
