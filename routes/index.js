@@ -92,4 +92,17 @@ function parseVideo(videoNode) {
   };
 }
 
+
+/*
+function parseExercise(exerciseNode) {
+  return { }
+}
+*/
+
+/*
+function parseArticle(articleNode) {
+  return { }
+}
+*/
+
 module.exports = router;
