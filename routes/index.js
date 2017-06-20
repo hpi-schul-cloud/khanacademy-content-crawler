@@ -84,6 +84,7 @@ function parseContent(node) {
  */
 function parseVideo(videoNode) {
 
+  let subject = videoNode.parents[1].translated_title;
   let tags = videoNode.parents.map(x => x.translated_title).reduce( (x,y) => x.concat(y), [] );
 
   return {
@@ -91,7 +92,9 @@ function parseVideo(videoNode) {
     title: videoNode.title,
     url: videoNode.ka_url,
     description: videoNode.description,
-    tags: tags
+    subject: subject,
+    tags: tags,
+    license: videoNode.license_name,
   };
 }
 
