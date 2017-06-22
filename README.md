@@ -49,3 +49,11 @@ e.g. math/cc-1st-grade-math/cc-1st-add-subtract/cc-1st-add-ones-tens/a/adding-1s
     ...
 }
 ```
+
+## Content Types
+Khan Academy has three content types, but as described in this [issue](https://github.com/Khan/khan-api/issues/121), only the video content type is working.
+
+* Videos
+* Exercises
+* Articles
+ 
