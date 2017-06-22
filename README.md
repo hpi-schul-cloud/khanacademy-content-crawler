@@ -2,7 +2,7 @@
 A crawler for the khanacademy content
 
 # Khan Academy data structure
-The Khan Academy API can be found on [Github](https://github.com/Khan/khan-api/wiki/Khan-Academy-API).
+The Khan Academy API can be found on [GitHub](https://github.com/Khan/khan-api/wiki/Khan-Academy-API).
 
 > The Khan Academy API gives developers access to nearly all types of Khan Academy data via a RESTful API that outputs easy-to-parse JSON. 
 
@@ -17,7 +17,7 @@ e.g. math/cc-1st-grade-math/cc-1st-add-subtract/cc-1st-add-ones-tens/a/adding-1s
 ```
 
 * Topic Node:
-```json
+```
 {
     "id": "x7a488390",
     "kind": "Topic",
@@ -36,7 +36,7 @@ e.g. math/cc-1st-grade-math/cc-1st-add-subtract/cc-1st-add-ones-tens/a/adding-1s
 ```
 
 * Video Node:
-```json
+```
 {
     "id": "x9b4a5e7a",
     "kind": "Video",
