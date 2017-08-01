@@ -1,4 +1,7 @@
 # khanacademy-content-crawler
+
+[![Dockerhub Automated Build Status](https://img.shields.io/docker/build/schulcloud/khanacademy-content-crawler.svg)](https://hub.docker.com/r/schulcloud/khanacademy-content-crawler/builds/)
+
 A crawler for the khanacademy content
 
 # Khan Academy data structure
