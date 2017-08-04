@@ -1,7 +1,24 @@
 # khanacademy-content-crawler
 A crawler for the khanacademy content
 
-# Khan Academy data structure
+# Calling the Crawler
+The crawler has only one endpoint and only one paramter for the destination, where the crawled data will be send to.
+
+```
+GET /?DESTINATION=DESTINATION-URL
+```
+
+- **DESTINATION** (required)    
+The destination string `DESTINATION-URL` should contain the endpoint where the crawled data will be send to. Internally the crawler is posting every crawled resource to the given URL.
+
+## Authorization
+For sending data to the official Schul-Cloud content service you need a Schul-Cloud account and pass your credentials via [basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication).
+
+```
+Authorization: Basic QWxhZGRpbjpPcGVuU2VzYW1l
+```
+
+# Khan Academy Data Structure
 The Khan Academy API can be found on [GitHub](https://github.com/Khan/khan-api/wiki/Khan-Academy-API).
 
 > The Khan Academy API gives developers access to nearly all types of Khan Academy data via a RESTful API that outputs easy-to-parse JSON. 
