@@ -1,4 +1,7 @@
 # khanacademy-content-crawler
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/schul-cloud/khanacademy-content-crawler.svg)](https://greenkeeper.io/)
+
 A crawler for the khanacademy content
 
 # Calling the Crawler
